@@ -20,7 +20,7 @@ function showScene() {
 
   // Crear mensaje romántico
   const message = document.createElement('p');
-  message.textContent = "❤️";
+  message.textContent = "Si no estoy con caro, favor de quemar esta pagina";
 
   // Agregar imagen y mensaje al contenedor
   scene.appendChild(img);
