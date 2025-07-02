@@ -277,3 +277,68 @@ body {
   pointer-events: auto;
   transform: translateY(0);
 }
+.love-letter {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+.love-letter button {
+  background: #fff8f0;
+  font-size: 1.4em;
+  border: 2px solid #cda18c;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: background 0.3s ease;
+}
+
+.love-letter button:hover {
+  background: #ffe3d8;
+}
+
+.letter {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  max-width: 600px;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.letter.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -40%);
+}
+
+.letter.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%);
+}
+
+.letter-paper {
+  background: url('burned_paper_texture.png') center/cover no-repeat;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.5em;
+  color: #5d2c2c;
+  line-height: 1.6;
+  text-align: justify;
+  background-color: #fffaf5;
+  backdrop-filter: blur(1px);
+}
+
+.letter-paper h2 {
+  margin-bottom: 20px;
+  font-size: 2em;
+  color: #8b3a3a;
+}
