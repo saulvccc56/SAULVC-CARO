@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Look this page, when stay sad </title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<!-- Botón pequeño y contenedor de imagen real -->
+<div class="real-story">
+  <button onclick="toggleRealPhoto()">📝 Basada en hechos reales</button>
+  <div id="real-photo" class="real-photo hidden">
+    <img src="fotoreal.png" alt="Foto real de la historia">
+    <p>2024-la semana pasada de the normal</p>
+  </div>
+</div>
+
+<body>
+  <div class="overlay"></div>
+  <div class="particles"></div>
+
+  <div class="game-container">
+    <h1 class="title">Look this page, when stay sad</h1>
+    <p class="subtitle">Una historia al estilo <em>The Notebook</em></p>
+
+    <button class="romantic-button" onclick="showScene()">Sayul</button>
+
+    <div class="scene" id="scene">
+      <!-- Imagen + música + texto aparecerán aquí -->
+    </div>
+  </div>
+
+  <audio id="bg-music" loop>
+    <source src="mejor_hombre.mp3" type="audio/mpeg">
+    Tu navegador no soporta el audio.
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

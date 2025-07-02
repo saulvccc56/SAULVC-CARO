@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap');
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Cuerpo */
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: linear-gradient(to bottom, #f7f1e3, #fce8df);
+  color: #333;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background-image: url('paper_texture.jpg'); /* Opcional: fondo tipo papel o pergamino */
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+/* Luz suave */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Partículas sutiles */
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(#ffffff55 1px, transparent 1px);
+  background-size: 25px 25px;
+  opacity: 0.15;
+  animation: sparkle 8s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes sparkle {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100px 100px;
+  }
+}
+
+/* Contenedor del juego */
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 40px 20px;
+  text-align: center;
+  z-index: 1;
+  position: relative;
+  backdrop-filter: blur(3px);
+}
+
+.title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 4em;
+  color: #843939;
+  text-shadow: 1px 1px 2px #fff;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.3em;
+  color: #6a4e42;
+  margin-bottom: 40px;
+  font-style: italic;
+}
+
+/* Botón */
+.romantic-button {
+  padding: 18px 40px;
+  font-size: 1.3em;
+  background: linear-gradient(to right, #b76e79, #eec0c6);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+  font-family: 'Great Vibes', cursive;
+  letter-spacing: 1px;
+}
+
+.romantic-button:hover {
+  background: linear-gradient(to right, #a15361, #e4a8b3);
+  transform: scale(1.05);
+}
+
+/* Escena */
+.scene {
+  margin-top: 50px;
+  max-width: 90%;
+  animation: fadeIn 2s ease forwards;
+}
+
+.scene img {
+  width: 100%;
+  max-width: 650px;
+  border-radius: 25px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  margin-bottom: 25px;
+  filter: sepia(0.1) contrast(1.1);
+  transition: transform 0.5s ease;
+}
+
+.scene img:hover {
+  transform: scale(1.02);
+}
+
+.scene p {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.2em;
+  color: #843939;
+  text-shadow: 1px 1px #fff8f0;
+}
+
+/* Timeline romántico */
+.timeline {
+  margin-top: 30px;
+  font-size: 1.1em;
+  color: #5f4b42;
+  background: #fff5f2;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  max-width: 500px;
+}
+
+.timeline ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.timeline li {
+  margin: 12px 0;
+  position: relative;
+  padding-left: 20px;
+}
+
+.timeline li::before {
+  content: "❤";
+  position: absolute;
+  left: 0;
+  color: #d6657c;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scene-active {
+  background: linear-gradient(to bottom, #fff8f5, #ffe6ea);
+  transition: background 2s ease-in-out;
+}
+
+.animated-img {
+  animation: zoomFade 1.5s ease forwards;
+}
+
+@keyframes zoomFade {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Estrellas brillantes */
+.star {
+  position: fixed;
+  width: 5px;
+  height: 5px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: twinkle 4s ease-out;
+  pointer-events: none;
+  z-index: 999;
+}
+
+@keyframes twinkle {
+  0% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.4); opacity: 1; }
+  100% { transform: scale(1); opacity: 0; }
+}
+.real-story {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 10;
+}
+
+.real-story button {
+  font-size: 0.9em;
+  background-color: #fff;
+  color: #444;
+  padding: 8px 14px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  cursor: pointer;
+  font-style: italic;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.real-story button:hover {
+  background-color: #fce8ef;
+  color: #a14a5b;
+}
+
+.real-photo {
+  position: absolute;
+  top: -280px;
+  left: 0;
+  width: 180px;
+  background: #fffdfd;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.real-photo img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.real-photo p {
+  font-size: 0.9em;
+  color: #7b3a46;
+  font-style: italic;
+  font-family: 'Great Vibes', cursive;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+}
+
+.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
