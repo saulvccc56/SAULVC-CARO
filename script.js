@@ -123,3 +123,11 @@ function toggleRealPhoto() {
   realPhoto.classList.toggle('hidden');
   realPhoto.classList.toggle('visible');
 }
+/**
+ * Muestra/oculta la carta romántica
+ */
+function toggleLetter() {
+  const letter = document.getElementById('letter-content');
+  letter.classList.toggle('hidden');
+  letter.classList.toggle('visible');
+}
